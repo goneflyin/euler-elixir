@@ -49,7 +49,11 @@ defmodule Multiples do
     23
   """
   def sumMultsBelow(limit) do
-    multsgen |> sumBelow(limit)
+    # multsgen |> sumBelow(limit)
+    1..limit-1
+      |> Stream.filter(fn (n) -> rem(n,3) == 0 || rem(n,5) == 0 end)
+      |> Enum.reduce 0, &(&1 + &2)
+
   end
 
   def solution do
@@ -59,7 +63,7 @@ defmodule Multiples do
   def solution2 do
     1..1000-1
       |> Stream.filter(fn (n) -> rem(n,3) == 0 || rem(n,5) == 0 end)
-      |> Enum.reduce(0, fn(x, acc) -> x + acc end)
+      |> Enum.reduce 0, &(&1 + &2)
   end
 end
 
