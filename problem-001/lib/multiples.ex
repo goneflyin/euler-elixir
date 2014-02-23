@@ -57,9 +57,8 @@ defmodule Multiples do
   end
 
   def solution2 do
-    Stream.iterate(0, fn (n) -> n+1 end)
+    1..1000-1
       |> Stream.filter(fn (n) -> rem(n,3) == 0 || rem(n,5) == 0 end)
-      |> Enum.take_while(fn (x) -> x < 1000 end)
       |> Enum.reduce(0, fn(x, acc) -> x + acc end)
   end
 end
