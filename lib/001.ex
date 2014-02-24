@@ -1,12 +1,4 @@
 defmodule Multiples do
-  use Application.Behaviour
-
-  # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
-  # for more information on OTP Applications
-  def start(_type, _args) do
-    Multiples.Supervisor.start_link
-  end
-
   @doc """
     Returns a stream of all natural numbers [0,1,2,...]
 
