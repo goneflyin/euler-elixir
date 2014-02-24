@@ -4,6 +4,7 @@ defmodule Euler.Problem2 do
     By considering the terms in the Fibonacci sequence whose values do not exceed four million,
     find the sum of the even-valued terms.
   """
+
   @doc """
     Returns the nth Fibonacci number, where the 1st is 1,
     2nd is 2, etc.

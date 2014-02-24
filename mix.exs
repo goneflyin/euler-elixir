@@ -2,15 +2,17 @@ defmodule Euler.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :euler,
+    [ app: :euler_cli,
       version: "0.0.1",
       elixir: "~> 0.12.4-dev",
+      source_url: "https://github.com/goneflyin/euler-elixir",
+      escript_main_module: Euler.Cli,
       deps: deps ]
   end
 
   # Configuration for the OTP application
   def application do
-    []
+    [  ]
   end
 
   # Returns the list of dependencies in the format:

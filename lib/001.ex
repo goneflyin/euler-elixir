@@ -1,9 +1,17 @@
-defmodule Multiples do
+defmodule Euler.Problem1 do
+  @moduledoc """
+    http://projecteuler.net/problem=1
+    If we list all the natural numbers below 10 that are multiples of 3 or 5,
+    we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+    Find the sum of all the multiples of 3 or 5 below 1000.
+  """
+
   @doc """
     Returns a stream of all natural numbers [0,1,2,...]
 
     Example:
-      iex> Multiples.natgen |> Enum.take(5)
+      iex> Euler.Problem1.natgen |> Enum.take(5)
       [0, 1, 2, 3, 4]
   """
   def natgen do
@@ -14,7 +22,7 @@ defmodule Multiples do
     Returns a stream of all natural numbers that are a multiple of
     3 or 5.
 
-    iex> Multiples.multsgen |> Enum.take(6)
+    iex> Euler.Problem1.multsgen |> Enum.take(6)
     [0, 3, 5, 6, 9, 10]
   """
   def multsgen do
@@ -24,7 +32,7 @@ defmodule Multiples do
   @doc """
     Returns the sum of all elements in the enumerable that are below limit.
 
-    iex> Multiples.multsgen |> Multiples.sumBelow(11)
+    iex> Euler.Problem1.multsgen |> Euler.Problem1.sumBelow(11)
     33
   """
   def sumBelow(enum, limit) do
@@ -37,7 +45,7 @@ defmodule Multiples do
     Returns the sum of all natural numbers that are multiples of 3 or 5
     below the limit provided.
 
-    iex> Multiples.sumMultsBelow(10)
+    iex> Euler.Problem1.sumMultsBelow(10)
     23
   """
   def sumMultsBelow(limit) do
