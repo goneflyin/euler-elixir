@@ -1,12 +1,9 @@
 defmodule Fibs do
-  use Application.Behaviour
-
-  # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
-  # for more information on OTP Applications
-  def start(_type, _args) do
-    Fibs.Supervisor.start_link
-  end
-
+  @moduledoc """
+    http://projecteuler.net/problem=2
+    By considering the terms in the Fibonacci sequence whose values do not exceed four million,
+    find the sum of the even-valued terms.
+  """
   @doc """
     Returns the nth Fibonacci number, where the 1st is 1,
     2nd is 2, etc.
