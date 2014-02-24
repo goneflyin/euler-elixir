@@ -1,4 +1,4 @@
-defmodule Fibs do
+defmodule Euler.Problem2 do
   @moduledoc """
     http://projecteuler.net/problem=2
     By considering the terms in the Fibonacci sequence whose values do not exceed four million,
@@ -8,10 +8,10 @@ defmodule Fibs do
     Returns the nth Fibonacci number, where the 1st is 1,
     2nd is 2, etc.
 
-      iex> Fibs.fib(5)
+      iex> Euler.Problem2.fib(5)
       8
 
-      iex> Fibs.fib(10)
+      iex> Euler.Problem2.fib(10)
       89
   """
   def fib(n) do
@@ -33,7 +33,7 @@ defmodule Fibs do
   @doc """
     Returns a stream that generates Fibonacci numbers.
 
-      iex> Fibs.fibgen |> Enum.take(5)
+      iex> Euler.Problem2.fibgen |> Enum.take(5)
       [1, 2, 3, 5, 8]
   """
   def fibgen do
@@ -45,10 +45,10 @@ defmodule Fibs do
     2nd is 2, etc.
     Uses the fibgen stream.
 
-      iex> Fibs.fib2(5)
+      iex> Euler.Problem2.fib2(5)
       8
 
-      iex> Fibs.fib(10)
+      iex> Euler.Problem2.fib(10)
       89
   """
   def fib2(n) do
@@ -58,7 +58,7 @@ defmodule Fibs do
   @doc """
     Returns the sum of all Fibonacci numbers up to the nth number.
 
-    iex> Fibs.sumToN(9)
+    iex> Euler.Problem2.sumToN(9)
     142
   """
   def sumToN(n) do
@@ -68,7 +68,7 @@ defmodule Fibs do
   @doc """
     Returns the sum of all Fibonacci numbers that are below n.
 
-    iex> Fibs.sumFibsBelow(10)
+    iex> Euler.Problem2.sumFibsBelow(10)
     19
   """
   def sumFibsBelow(n) do
@@ -78,7 +78,7 @@ defmodule Fibs do
   @doc """
     Returns the sum of all even Fibonacci numbers that are below n.
 
-    iex> Fibs.sumEvenFibsBelow(25)
+    iex> Euler.Problem2.sumEvenFibsBelow(25)
     10
   """
   def sumEvenFibsBelow(n) do
@@ -92,25 +92,3 @@ defmodule Fibs do
   end
 end
 
-ExUnit.start
-
-defmodule FibTest do
-  use ExUnit.Case
-  doctest Fibs
-
-  test "fib(5) should equal fib2(5)" do
-    assert(Fibs.fib(5) == Fibs.fib2(5))
-  end
-
-  test "first 5 fibs should sum to 19" do
-    assert(Fibs.sumToN(5) == 19)
-  end
-
-  test "all fibs below 10 sum to 19" do
-    assert(Fibs.sumFibsBelow(10) == 19)
-  end
-
-  test "all even fibs below 10 sum to 10" do
-    assert(Fibs.sumEvenFibsBelow(10) == 10)
-  end
-end

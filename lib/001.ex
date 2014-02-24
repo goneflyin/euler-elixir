@@ -67,9 +67,3 @@ defmodule Multiples do
   end
 end
 
-ExUnit.start
-
-defmodule MultiplesDocTest do
-  use ExUnit.Case
-  doctest Multiples
-end
